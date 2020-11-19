@@ -1,3 +1,4 @@
 drawerEnv
 raspi/tmp
 raspi/secrets.py
+__pycache__/
