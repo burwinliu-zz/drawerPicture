@@ -1,4 +1,6 @@
-drawerEnv
 raspi/tmp
 raspi/secrets.py
 __pycache__/
+
+drawer_frontend/src/env.js
+
