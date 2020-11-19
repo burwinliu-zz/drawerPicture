@@ -1,6 +1,36 @@
-raspi/tmp
-raspi/secrets.py
+
+drawer_env
 __pycache__/
 
+# Raspi
+raspi/tmp
+raspi/secrets.py
+
+# Server
+drawer_server/store.pickle
+drawer_server/tmp
+
+# Frontend
 drawer_frontend/src/env.js
 
+# dependencies
+drawer_frontend/node_modules
+drawer_frontend/.pnp
+drawer_frontend/.pnp.js
+
+# testing
+drawer_frontend/coverage
+
+# production
+drawer_frontend/build
+
+# misc
+drawer_frontend/.DS_Store
+drawer_frontend/.env.local
+drawer_frontend/.env.development.local
+drawer_frontend/.env.test.local
+drawer_frontend/.env.production.local
+
+drawer_frontend/npm-debug.log*
+drawer_frontend/yarn-debug.log*
+drawer_frontend/yarn-error.log*
