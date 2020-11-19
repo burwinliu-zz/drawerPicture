@@ -1,2 +1,3 @@
 drawerEnv
-tmp
+raspi/tmp
+raspi/secrets.py
