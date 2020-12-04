@@ -5,8 +5,10 @@ __pycache__/
 # Raspi
 raspi/tmp
 raspi/secrets.py
+raspi/tmp_enum
 
 # Server
+drawer_server/secrets.py
 drawer_server/store.pickle
 drawer_server/tmp
 
