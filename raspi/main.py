@@ -21,13 +21,11 @@ ENUM = 0
 
 
 def uploadPic():
-    # s3 = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY_ID,
-    #         aws_secret_access_key=AWS_SECRET_ACCESS_KEY)    
-    # contents = s3.list_objects(Bucket='drawerbucket')['Contents']
-    # print(contents)
+    s3 = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY_ID,
+            aws_secret_access_key=AWS_SECRET_ACCESS_KEY)    
 
     try:
-        # s3.upload_file("./tmp/captured.png", 'drawerbucket', f'captured_{ENUM}')
+        s3.upload_file("./tmp/captured.png", 'drawerbucket', f'captured_{ENUM}')
         ENUM += 1
         try:
             with open("./tmp/enum", "w+") as fp 
@@ -38,7 +36,7 @@ def uploadPic():
                 fp.truncate()  
                 fp.write(ENUM)
         except IOError:
-
+            print("fail open")
         
         return
     except NoCredentialsError:
