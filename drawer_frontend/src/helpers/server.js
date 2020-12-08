@@ -15,6 +15,7 @@ export const getLabels = async () => {
     return labels['labels'];
 }
 
-export const addLabels = async () => {
+export const addLabels = (label) => {
+    fetch('http://127.0.0.1:5000/add_labels?label=' + label);
     return;
 }
