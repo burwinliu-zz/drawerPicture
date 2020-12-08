@@ -36,3 +36,5 @@ drawer_frontend/.env.production.local
 drawer_frontend/npm-debug.log*
 drawer_frontend/yarn-debug.log*
 drawer_frontend/yarn-error.log*
+
+secrets.*
