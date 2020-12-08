@@ -21,24 +21,25 @@ ENUM = 0
 
 
 def uploadPic():
-    # s3 = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY_ID,
-    #         aws_secret_access_key=AWS_SECRET_ACCESS_KEY)    
+    global ENUM
+    s3 = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY_ID,
+            aws_secret_access_key=AWS_SECRET_ACCESS_KEY)    
     # contents = s3.list_objects(Bucket='drawerbucket')['Contents']
     # print(contents)
 
     try:
-        # s3.upload_file("./tmp/captured.png", 'drawerbucket', f'captured_{ENUM}')
+        s3.upload_file("./tmp/captured.png", 'drawerbucket', f'captured_{ENUM}')
         ENUM += 1
         try:
-            with open("./tmp/enum", "w+") as fp 
+            with open("./tmp/enum", "w+") as fp:
                 # absolute file positioning 
                 fp.seek(0)  
                 
                 # to erase all data  
                 fp.truncate()  
-                fp.write(ENUM)
+                fp.write(str(ENUM))
         except IOError:
-
+            print("ERROR")
         
         return
     except NoCredentialsError:
@@ -58,6 +59,10 @@ if __name__ == "__main__":
     try:
         with open('./tmp_enum', 'r') as fp:
             ENUM = int(fp.readline())
+
+    except IOError:
+        print("No file yet")
+        ENUM = 0
     ser = serial.Serial(sys.argv[1], 9600)
     while 1: 
         s = ser.readline().decode('utf-8').strip()
